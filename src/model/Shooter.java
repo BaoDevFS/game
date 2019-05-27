@@ -97,6 +97,8 @@ public class Shooter extends GameFigure {
 			GameData.shooter = new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
 		} else {
 			GameData.highScore.processHighScore();
+			JOptionPane jOptionPane = new JOptionPane();
+			jOptionPane.setMessage("Game Over");
 			JOptionPane.showMessageDialog(null, "Game Over");
 			Animator.running =false;
 		
