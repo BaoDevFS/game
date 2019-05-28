@@ -3,7 +3,6 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.GameData;
 import view.MainMenu;
 import view.MainView;
 import view.PlayWindow;

@@ -5,6 +5,7 @@ import controller.KeyController;
 import controller.Main;
 import controller.MouseController;
 import controller.MouseMovementListener;
+import model.BorderDecorator;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -57,9 +58,9 @@ public class PlayWindow extends JPanel {
 		pauseButton.setVisible(false);
 		resumeButton.setVisible(false);
 
-		southPanel.add(startButton);
-		southPanel.add(resumeButton);
-		southPanel.add(pauseButton);
+		southPanel.add(new BorderDecorator(startButton));
+		southPanel.add(new BorderDecorator(resumeButton));
+		southPanel.add(new BorderDecorator(pauseButton));
 
 		add(southPanel, BorderLayout.SOUTH);
 

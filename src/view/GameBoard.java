@@ -1,5 +1,6 @@
 package view;
 
+import controller.Animator;
 import controller.Main;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -39,7 +40,7 @@ public class GameBoard extends JPanel {
 		g2.clearRect(0, 0, width, height); // not sure it's work
 		g2.setBackground(Color.BLACK);
 
-		if (Main.animator.running) {
+		if (Animator.running) {
 			synchronized (Main.gameData.gameFigures) {
 				model.GameData.bg.render(g2); // rendering background
 				for (GameFigure f : Main.gameData.gameFigures) {

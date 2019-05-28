@@ -6,7 +6,6 @@ import model.FlyingSaucer;
 import model.GameFigure;
 import model.PowerUp;
 import model.Shooter;
-import view.MainView;
 import view.PlayWindow;
 
 public class Animator implements Runnable {

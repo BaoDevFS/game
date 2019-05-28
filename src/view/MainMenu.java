@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 import controller.ButtonListener;
+import model.BorderDecorator;
 import model.CrossDecorator;
-import model.SlashDecorator;
 
 public class MainMenu extends JPanel {
 	/**
@@ -39,7 +39,7 @@ public class MainMenu extends JPanel {
 		playButton.setBorder(null);
 		playButton.setFocusPainted(false);
 		playButton.setContentAreaFilled(false);
-		buttonsPanel.add(new SlashDecorator(new CrossDecorator(playButton)));
+		buttonsPanel.add(new BorderDecorator(playButton));
 
 		ImageIcon icore = new ImageIcon("src/view/core.png");
 		coreButton = new JButton();
@@ -47,7 +47,7 @@ public class MainMenu extends JPanel {
 		coreButton.setBorder(null);
 		coreButton.setFocusPainted(false);
 		coreButton.setContentAreaFilled(false);
-		buttonsPanel.add(coreButton);
+		buttonsPanel.add(new BorderDecorator(coreButton));
 
 		ImageIcon ihelp = new ImageIcon("src/view/help.png");
 		helpButton = new JButton();
@@ -55,7 +55,7 @@ public class MainMenu extends JPanel {
 		helpButton.setBorder(null);
 		helpButton.setFocusPainted(false);
 		helpButton.setContentAreaFilled(false);
-		buttonsPanel.add(helpButton);
+		buttonsPanel.add(new BorderDecorator(helpButton));
 
 		ImageIcon iexit = new ImageIcon("src/view/exit.png");
 		exitButton = new JButton();
@@ -63,7 +63,7 @@ public class MainMenu extends JPanel {
 		exitButton.setBorder(null);
 		exitButton.setFocusPainted(false);
 		exitButton.setContentAreaFilled(false);
-		buttonsPanel.add(exitButton);
+		buttonsPanel.add(new CrossDecorator(new BorderDecorator(exitButton)));
 
 		contentBackground.add(buttonsPanel);
 
