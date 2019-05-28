@@ -33,7 +33,7 @@ public class MainMenu extends JPanel {
 		
 		buttonsPanel.setOpaque(false);  // setting panel to transparent
 
-		ImageIcon iplay = new ImageIcon("src/view/play.png");
+		ImageIcon iplay = new ImageIcon("src/ImageGame/play.png");
 		playButton = new JButton();
 		playButton.setIcon(iplay);
 		playButton.setBorder(null);
@@ -41,7 +41,7 @@ public class MainMenu extends JPanel {
 		playButton.setContentAreaFilled(false);
 		buttonsPanel.add(new BorderDecorator(playButton));
 
-		ImageIcon icore = new ImageIcon("src/view/core.png");
+		ImageIcon icore = new ImageIcon("src/ImageGame/score.png");
 		coreButton = new JButton();
 		coreButton.setIcon(icore);
 		coreButton.setBorder(null);
@@ -49,7 +49,7 @@ public class MainMenu extends JPanel {
 		coreButton.setContentAreaFilled(false);
 		buttonsPanel.add(new BorderDecorator(coreButton));
 
-		ImageIcon ihelp = new ImageIcon("src/view/help.png");
+		ImageIcon ihelp = new ImageIcon("src/ImageGame/help.png");
 		helpButton = new JButton();
 		helpButton.setIcon(ihelp);
 		helpButton.setBorder(null);
@@ -57,7 +57,7 @@ public class MainMenu extends JPanel {
 		helpButton.setContentAreaFilled(false);
 		buttonsPanel.add(new BorderDecorator(helpButton));
 
-		ImageIcon iexit = new ImageIcon("src/view/exit.png");
+		ImageIcon iexit = new ImageIcon("src/ImageGame/exit.png");
 		exitButton = new JButton();
 		exitButton.setIcon(iexit);
 		exitButton.setBorder(null);

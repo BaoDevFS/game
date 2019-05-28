@@ -32,9 +32,9 @@ public class PlayWindow extends JPanel {
 		add(Main.gameBoard, BorderLayout.CENTER);
 
 		JPanel southPanel = new JPanel();
-		ImageIcon istart = new ImageIcon("src/view/start.png");
-		ImageIcon ipause = new ImageIcon("src/view/pause.png");
-		ImageIcon iresume = new ImageIcon("src/view/resume.png");
+		ImageIcon istart = new ImageIcon("src/ImageGame/start.png");
+		ImageIcon ipause = new ImageIcon("src/ImageGame/pause.png");
+		ImageIcon iresume = new ImageIcon("src/ImageGame/resume.png");
 		startButton = new JButton();
 		pauseButton = new JButton();
 		resumeButton = new JButton();
