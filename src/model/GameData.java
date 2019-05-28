@@ -25,8 +25,7 @@ public class GameData {
 		highScore = new HighScore();
 		createObject = new CreateObject();
 		gameFigures = Collections.synchronizedList(new ArrayList<GameFigure>());
-		shooter = new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
-
+		shooter =shooter.getInstance();
 		gameFigures.add(shooter);
 		weapon = new BasicWeapon();
 
