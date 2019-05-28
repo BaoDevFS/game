@@ -21,6 +21,8 @@ public class Laser extends GameFigure{
         lState = new LaserStateAlive();
         direction = new Point2D.Float(tx, ty);
         this.color = Color.RED;
+  
+        System.out.println();
     }
 
     @Override
