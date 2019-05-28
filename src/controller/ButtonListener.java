@@ -3,6 +3,8 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import view.MainMenu;
 import view.MainView;
 import view.PlayWindow;
@@ -19,9 +21,19 @@ public class ButtonListener implements ActionListener {
 			MainView.playWindow.setVisible(true);
 			Main.gameBoard.requestFocus();
 		}
+		if (ae.getSource() == MainMenu.exitButton) {
+			try {
+				int n = JOptionPane.showConfirmDialog(MainMenu.exitButton, "Are you sure you want to quit?", "Alert",
+						JOptionPane.YES_NO_OPTION);
+				if (n == JOptionPane.YES_OPTION)
+					System.exit(0);
+			} catch (Exception e2) {
+			}
+		}
 
 		if (ae.getSource() == PlayWindow.startButton) {
-			Main.gameData.start();;
+			Main.gameData.start();
+			;
 			PlayWindow.pauseButton.setVisible(true);
 			PlayWindow.startButton.setVisible(false);
 			Main.gameBoard.requestFocus();
