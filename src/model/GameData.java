@@ -10,7 +10,6 @@ import java.util.List;
 
 public class GameData {
 	public static HighScore highScore;
-	private final int RADIUS = 6;
 	public static Shooter shooter;
 	public static WeaponComponent weapon;
 	public final List<GameFigure> gameFigures;
@@ -19,14 +18,12 @@ public class GameData {
 	private final int MAX_SAUCERS = 10;
 	private final int MAX_POWERUPS = 10;
 	private final int MAX_BOMBS = 12;
-	private StoreObject storeObject;
 	private CreateObject createObject;
 	public static Background bg;
 
 	public GameData() {
 		highScore = new HighScore();
 		createObject = new CreateObject();
-		storeObject = new StoreObject(createObject);
 		gameFigures = Collections.synchronizedList(new ArrayList<GameFigure>());
 		shooter = new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
 
@@ -54,19 +51,19 @@ public class GameData {
 
 	public void addPower() {
 		synchronized (gameFigures) {
-			gameFigures.add(storeObject.createObject(StoreObject.POWERUP));
+			gameFigures.add(createObject.createObject(CreateObject.POWERUP));
 		}
 	}
 
 	public void addSaucer() {
 		synchronized (gameFigures) {
-			gameFigures.add(storeObject.createObject(StoreObject.SAUCER));
+			gameFigures.add(createObject.createObject(CreateObject.SAUCER));
 		}
 	}
 
 	public void addBomb() {
 		synchronized (gameFigures) {
-			gameFigures.add(storeObject.createObject(StoreObject.BOOM));
+			gameFigures.add(createObject.createObject(CreateObject.BOOM));
 		}
 	}
 
