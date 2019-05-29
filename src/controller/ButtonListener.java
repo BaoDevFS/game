@@ -33,12 +33,15 @@ public class ButtonListener implements ActionListener {
 
 		if (ae.getSource() == PlayWindow.startButton) {
 			Main.gameData.start();
-			;
 			PlayWindow.pauseButton.setVisible(true);
 			PlayWindow.startButton.setVisible(false);
 			Main.gameBoard.requestFocus();
 		}
-
+		if (ae.getSource() == MainMenu.coreButton) {
+			MainView.mainMenu.setVisible(false);
+			MainView.highScore.setVisible(true);
+			Main.gameBoard.requestFocus();
+		}
 		if (ae.getSource() == PlayWindow.pauseButton) {
 			Animator.running = (Animator.running) ? false : true;
 			PlayWindow.pauseButton.setVisible(false);
