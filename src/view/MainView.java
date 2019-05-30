@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,7 +14,7 @@ public class MainView extends JFrame {
 	public static PlayWindow playWindow;
 	public static MainMenu mainMenu;
 	public static JPanel panelParent;
-	public static HighScore highScore;
+	public static ViewHighScore highScore;
 	public MainView() {
 		panelParent = new JPanel();
 		panelParent.setLayout(new CardLayout());
@@ -30,7 +29,7 @@ public class MainView extends JFrame {
 
 	}
 	private void createHighScore() {
-		highScore = new HighScore();
+		highScore = new ViewHighScore();
 		panelParent.add(highScore);
 	}
 

@@ -23,15 +23,9 @@ public class Shooter extends GameFigure {
 	private int previousPwrUps;
 	private int weaponPower = 0;
 	private int lifeSpan = 3;
-	private static Shooter shooter;
-	public static Shooter getInstance() {
-		if(shooter==null) {
-			return shooter= new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
-		}else {
-			return shooter;
-		}
-	}
-	public Shooter(int x, int y) {
+	private static Shooter shooter = new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
+	
+	private Shooter(int x, int y) {
 		super(x, y);
 		super.state = STATE_ALIVE;
 		super.alliance = ALLIANCE_FRIEND;
@@ -44,6 +38,9 @@ public class Shooter extends GameFigure {
 			JOptionPane.showMessageDialog(null, "Error: Cannot open shooter.png");
 			System.exit(-1);
 		}
+	}
+	public static Shooter getShooter() {
+		return shooter;
 	}
 
 	@Override

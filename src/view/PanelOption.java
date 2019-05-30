@@ -8,6 +8,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class PanelOption extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Image image;
 	@Override
 	protected void paintComponent(Graphics g) {

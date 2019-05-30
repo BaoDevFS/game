@@ -2,7 +2,6 @@ package model;
 
 import controller.Main;
 import controller.Quadtree;
-import view.GameBoard;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,7 +24,7 @@ public class GameData {
 		highScore = new HighScore();
 		createObject = new CreateObject();
 		gameFigures = Collections.synchronizedList(new ArrayList<GameFigure>());
-		shooter =shooter.getInstance();
+		shooter = Shooter.getShooter();
 		gameFigures.add(shooter);
 		weapon = new BasicWeapon();
 

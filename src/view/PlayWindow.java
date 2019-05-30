@@ -22,19 +22,25 @@ public class PlayWindow extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	public static JButton pauseButton, startButton, resumeButton;
-	public static JTextField enemyStats;
-	public static JTextField powerStats;
+	public static JTextField otherObserverDisplay;
+	public static JTextField scoreObserverDisplay;
+	public static UpdateParemeter updateParemeter;
+
+	public UpdateParemeter getUpdateParemeter() {
+		return updateParemeter;
+	}
 
 	public PlayWindow() {
-		// setPreferredSize(new Dimension(Main.WIN_WIDTH, Main.WIN_HEIGHT));
+		updateParemeter = new UpdateParemeter();
+
 		setLayout(new BorderLayout());
 
 		add(Main.gameBoard, BorderLayout.CENTER);
 
 		JPanel southPanel = new JPanel();
-		ImageIcon istart = new ImageIcon("src/ImageGame/start.png");
-		ImageIcon ipause = new ImageIcon("src/ImageGame/pause.png");
-		ImageIcon iresume = new ImageIcon("src/ImageGame/resume.png");
+		ImageIcon istart = new ImageIcon("src/imageGame/start.png");
+		ImageIcon ipause = new ImageIcon("src/imageGame/pause.png");
+		ImageIcon iresume = new ImageIcon("src/imageGame/resume.png");
 		startButton = new JButton();
 		pauseButton = new JButton();
 		resumeButton = new JButton();
@@ -71,25 +77,19 @@ public class PlayWindow extends JPanel {
 
 		JPanel northPanel = new JPanel();
 		northPanel.setLayout(new GridLayout(2, 1));
-		northPanel.add(enemyStats = new JTextField());
-		northPanel.add(powerStats = new JTextField());
-		enemyStats.setEditable(false);
-		powerStats.setEditable(false);
-		enemyStats.setFocusable(false);
-		powerStats.setFocusable(false);
+		northPanel.add(otherObserverDisplay = new OtherObserver(updateParemeter));
+		northPanel.add(scoreObserverDisplay = new ScoreObserver(updateParemeter));
+		otherObserverDisplay.setEditable(false);
+		scoreObserverDisplay.setEditable(false);
+		otherObserverDisplay.setFocusable(false);
+		scoreObserverDisplay.setFocusable(false);
 		add(northPanel, BorderLayout.NORTH);
 
 		MouseController mouseController = new MouseController();
 		Main.gameBoard.addMouseListener(mouseController);
 
 		KeyController keyListener = new KeyController();
-
 		Main.gameBoard.addKeyListener(keyListener);
-		// Main.gameBoard.setFocusable(false);
-		// // just have one Component "true", the rest must be "false"
-		// startButton.setFocusable(false);
-		// quitButton.setFocusable(false);
-
 		MouseMovementListener mouseMovement = new MouseMovementListener();
 		Main.gameBoard.addMouseMotionListener(mouseMovement);
 

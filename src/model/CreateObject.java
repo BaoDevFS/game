@@ -1,6 +1,5 @@
 package model;
 
-import controller.Main;
 import view.GameBoard;
 
 public class CreateObject {

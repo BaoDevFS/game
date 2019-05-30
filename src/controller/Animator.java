@@ -66,8 +66,14 @@ public class Animator implements Runnable {
 								returnObject.nextState();
 								figure.nextState();
 								return;
-							}
-							returnObject.nextState();
+							} else if ((figure instanceof FlyingSaucer) || (returnObject instanceof FlyingSaucer)) {
+								returnObject.nextState();
+								figure.nextState();
+								PlayWindow.updateParemeter.updateUFOsDestroyed();
+
+							} else
+								returnObject.nextState();
+
 						}
 						// friend and powerup collide
 						else if (figure.alliance != GameFigure.ALLIANCE_ENEMY
@@ -76,6 +82,7 @@ public class Animator implements Runnable {
 							if (figure instanceof Shooter) {
 								returnObject.nextState();
 								Shooter.powerUpsCollected++;
+								PlayWindow.updateParemeter.updatePowerUpsCollected();
 							}
 						}
 						// enemy and powerup
@@ -91,12 +98,6 @@ public class Animator implements Runnable {
 				}
 			}
 		}
-
-		// Score Update
-		PlayWindow.enemyStats.setText("UFOs destroyed: " + FlyingSaucer.saucersDead + "     Power Up's Collected: "
-				+ Shooter.powerUpsCollected);
-		PlayWindow.powerStats.setText("Score: " + (Shooter.powerUpsCollected + FlyingSaucer.saucersDead * 5));
-
 	}
 
 }

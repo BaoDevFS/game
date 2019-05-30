@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import view.HighScore;
+import view.ViewHighScore;
 import view.MainMenu;
 import view.MainView;
 import view.PlayWindow;
@@ -38,7 +38,7 @@ public class ButtonListener implements ActionListener {
 			PlayWindow.startButton.setVisible(false);
 			Main.gameBoard.requestFocus();
 		}
-		if(ae.getSource()==HighScore.backOnHighScore) {
+		if(ae.getSource()==ViewHighScore.backOnHighScore) {
 			MainView.mainMenu.setVisible(true);
 			MainView.highScore.setVisible(false);
 			Main.gameBoard.requestFocus();

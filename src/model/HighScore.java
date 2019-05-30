@@ -14,6 +14,7 @@ public class HighScore {
 	public static ArrayList<String> highScore = new ArrayList<>();
 	public static int MAXELEMENT = 3;
 	File file;
+	private BufferedReader bfReader;
 
 	public HighScore() {
 		checkFile();
@@ -21,36 +22,6 @@ public class HighScore {
 	}
 
 	public boolean checkFile() {
-		// write file in D:\ neu muon
-		// File[] listRoot= File.listRoots();
-		// file = new File(listRoot[1]+FOlDER);
-		// if(file.exists()) {
-		// file= new File(listRoot[1]+FOlDER+"\\"+FILENAME);
-		// try {
-		// if(file.exists()) {
-		// return true;
-		// }else {
-		// file.createNewFile();
-		// try {
-		// FileWriter fileWriter = new FileWriter(file);
-		// for (int i = 0; i <MAXELEMENT; i++) {
-		// fileWriter.write("0"+"\n");
-		// }
-		// fileWriter.close();
-		// }catch (IOException e) {
-		// System.out.println(e.toString());
-		// }
-		// return true;
-		// }
-		// }catch (IOException e) {
-		// System.out.println(e.toString());
-		// return false;
-		// }
-		// }else {
-		// file.mkdir();
-		// checkFile();
-		// return true;
-		// }
 		String link = "src/hightscore/HightScore.txt";
 		file = new File(link);
 		if (file.exists()) {
@@ -78,7 +49,7 @@ public class HighScore {
 	public void readFile() {
 		try {
 			FileReader reader = new FileReader(file);
-			BufferedReader bfReader = new BufferedReader(reader);
+			bfReader = new BufferedReader(reader);
 			for (int i = 0; i < MAXELEMENT; i++) {
 				// hightScore[i] = bfReader.readLine();
 				highScore.add(i, bfReader.readLine());
