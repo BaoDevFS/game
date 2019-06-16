@@ -19,8 +19,29 @@ public class MainMenu extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	public JLabel contentBackground;
-	public static JButton playButton, coreButton, helpButton, exitButton;
+	private JButton playButton, coreButton, helpButton, exitButton;
 	public JPanel buttonsPanel;
+	
+
+	public JButton getPlayButton() {
+		return playButton;
+	}
+
+
+	public JButton getCoreButton() {
+		return coreButton;
+	}
+
+
+	public JButton getHelpButton() {
+		return helpButton;
+	}
+
+
+	public JButton getExitButton() {
+		return exitButton;
+	}
+
 
 	public MainMenu() {
 
@@ -35,6 +56,7 @@ public class MainMenu extends JPanel {
 
 		ImageIcon iplay = new ImageIcon("src/ImageGame/play.png");
 		playButton = new JButton();
+		playButton.setActionCommand("play");
 		playButton.setIcon(iplay);
 		playButton.setBorder(null);
 		playButton.setFocusPainted(false);
@@ -43,6 +65,8 @@ public class MainMenu extends JPanel {
 
 		ImageIcon icore = new ImageIcon("src/ImageGame/score.png");
 		coreButton = new JButton();
+		coreButton.setActionCommand("score");
+		
 		coreButton.setIcon(icore);
 		coreButton.setBorder(null);
 		coreButton.setFocusPainted(false);
@@ -51,6 +75,7 @@ public class MainMenu extends JPanel {
 
 		ImageIcon ihelp = new ImageIcon("src/ImageGame/help.png");
 		helpButton = new JButton();
+		helpButton.setActionCommand("help");
 		helpButton.setIcon(ihelp);
 		helpButton.setBorder(null);
 		helpButton.setFocusPainted(false);
@@ -59,6 +84,7 @@ public class MainMenu extends JPanel {
 
 		ImageIcon iexit = new ImageIcon("src/ImageGame/exit.png");
 		exitButton = new JButton();
+		exitButton.setActionCommand("exit");
 		exitButton.setIcon(iexit);
 		exitButton.setBorder(null);
 		exitButton.setFocusPainted(false);
@@ -74,7 +100,7 @@ public class MainMenu extends JPanel {
 				(int) (this.getPreferredSize().getWidth() / 2 - buttonsPanel.getPreferredSize().getWidth() / 2),
 				SpringLayout.WEST, contentBackground);
 
-		ButtonListener buttonListener = new ButtonListener();
+		ButtonListener buttonListener = new ButtonListener(this);
 		playButton.addActionListener(buttonListener);
 		helpButton.addActionListener(buttonListener);
 		coreButton.addActionListener(buttonListener);

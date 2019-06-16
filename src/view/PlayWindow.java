@@ -21,10 +21,27 @@ public class PlayWindow extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static JButton pauseButton, startButton, resumeButton;
-	public static JTextField otherObserverDisplay;
-	public static JTextField scoreObserverDisplay;
+	private JButton pauseButton, startButton, resumeButton;
+	public JButton getPauseButton() {
+		return pauseButton;
+	}
+
+	public JButton getStartButton() {
+		return startButton;
+	}
+
+	public JButton getResumeButton() {
+		return resumeButton;
+	}
+
+	public JTextField getOtherObserverDisplay() {
+		return otherObserverDisplay;
+	}
+
+	private JTextField otherObserverDisplay;
+	private JTextField scoreObserverDisplay;
 	public static UpdateParemeter updateParemeter;
+	
 
 	public UpdateParemeter getUpdateParemeter() {
 		return updateParemeter;
@@ -42,8 +59,11 @@ public class PlayWindow extends JPanel {
 		ImageIcon ipause = new ImageIcon("src/imageGame/pause.png");
 		ImageIcon iresume = new ImageIcon("src/imageGame/resume.png");
 		startButton = new JButton();
+		startButton.setActionCommand("start");
 		pauseButton = new JButton();
+		pauseButton.setActionCommand("pause");
 		resumeButton = new JButton();
+		resumeButton.setActionCommand("remuse");
 
 		startButton.setIcon(istart);
 		startButton.setBorder(null);
@@ -70,7 +90,7 @@ public class PlayWindow extends JPanel {
 
 		add(southPanel, BorderLayout.SOUTH);
 
-		ButtonListener buttonListener = new ButtonListener();
+		ButtonListener buttonListener = new ButtonListener(this);
 		startButton.addActionListener(buttonListener);
 		pauseButton.addActionListener(buttonListener);
 		resumeButton.addActionListener(buttonListener);

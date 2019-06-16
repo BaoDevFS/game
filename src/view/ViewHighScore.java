@@ -24,7 +24,11 @@ public class ViewHighScore extends JPanel {
 	JPanel jPanel, panel ;
 	Image image;
 	JLabel lb;
-	public static JButton backOnHighScore;
+	private JButton backOnHighScore;
+	
+	public JButton getBackOnHighScore() {
+		return backOnHighScore;
+	}
 	public ViewHighScore() {
 		
 		createPanel();
@@ -51,8 +55,9 @@ public class ViewHighScore extends JPanel {
 	    jPanel.setMaximumSize(new Dimension(250, 350));
 	    jPanel.setMinimumSize(new Dimension(250, 350));
 	    jPanel.setLayout(new GridLayout(3, 2, 2, 2));
-	    backOnHighScore = new JButton("Back");
-	    ButtonListener buttonListener = new ButtonListener();
+	    backOnHighScore = new JButton("back");
+	    backOnHighScore.setActionCommand("back");
+	    ButtonListener buttonListener = new ButtonListener(this);
 	    backOnHighScore.addActionListener(buttonListener);
 	    for (int i = 0; i <model.HighScore.MAXELEMENT; i++) {
 			lb= new JLabel((i+1)+":");
