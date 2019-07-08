@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 public class PowerUp extends GameFigure {
 
     public static int powerAlive;
-    public static int powerDead;
     private int radius;
     private int dx = 3;
     private int dy = 3;
@@ -99,7 +98,6 @@ public class PowerUp extends GameFigure {
 
     @Override
     public void addDead() {
-        powerDead++;
         powerAlive--;
     }
 

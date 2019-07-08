@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import view.UpdateParemeter;
+
 public class HighScore {
 	public static String FOlDER = "UFO";
 	public static String FILENAME = "hightScore";
@@ -74,11 +76,11 @@ public class HighScore {
 	}
 
 	public void processHighScore() {
-		int score = Shooter.powerUpsCollected + FlyingSaucer.saucersDead * 5;
+		int score = UpdateParemeter.getUniqueInstance().getScore();
+		System.out.println(score);
 		for (int i = 0; i < MAXELEMENT; i++) {
 			if (score > (highScore.get(i).equalsIgnoreCase("null") ? 0 : Integer.parseInt(highScore.get(i)))) {
 				highScore.add(i, score + "");
-				System.out.println("qwer" + String.valueOf(score));
 				break;
 			}
 		}

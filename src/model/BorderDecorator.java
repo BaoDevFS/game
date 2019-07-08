@@ -14,21 +14,19 @@ public class BorderDecorator extends Decorator {
 	 */
 	private static final long serialVersionUID = 1L;
 	private boolean mouse_over; // true when mose over button
-	private JComponent thisComp;
 
 	public BorderDecorator(JComponent c) {
 		super(c);
 		mouse_over = false;
-		thisComp = this;
 		c.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
 				mouse_over = true;
-				thisComp.repaint();
+				repaint();
 			}
 
 			public void mouseExited(MouseEvent e) {
-				mouse_over = false; 
-				thisComp.repaint();
+				mouse_over = false;
+				repaint();
 			}
 		});
 	}

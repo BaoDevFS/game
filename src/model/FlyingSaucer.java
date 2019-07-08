@@ -12,7 +12,6 @@ import view.GameBoard;
 public class FlyingSaucer extends GameFigure {
     
     public static int saucersAlive;
-    public static int saucersDead;
     private int width = 40;
     private int height = 10;
     private final int UNIT_TRAVEL = 5; // per frame
@@ -70,7 +69,6 @@ public class FlyingSaucer extends GameFigure {
 
     @Override
     public void addDead() {
-        saucersDead++;
         saucersAlive--;
     }
     

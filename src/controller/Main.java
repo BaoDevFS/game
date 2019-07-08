@@ -22,7 +22,7 @@ public class Main {
 
 		JFrame game = new MainView();
 		//dw
-		game.setTitle("Phi thuyen ban dia bay");
+		game.setTitle("UFO KILLER");
 		game.setSize(WIN_WIDTH, WIN_HEIGHT);
 		game.setLocation(100, 0);
 		game.setResizable(false); // window size cannot change

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import view.Helps;
 import view.MainMenu;
 import view.MainView;
 import view.PlayWindow;
@@ -22,7 +23,6 @@ public class ButtonListener implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		switch (ae.getActionCommand()) {
 		case "play":
-			System.out.println("start");
 			Animator.running = true;
 			MainView.mainMenu.setVisible(false);
 			MainView.playWindow.setVisible(true);
@@ -43,6 +43,7 @@ public class ButtonListener implements ActionListener {
 			Main.gameBoard.requestFocus();
 			break;
 		case "help":
+			new Helps();
 			break;
 		case "back":
 			MainView.mainMenu.setVisible(true);
@@ -67,7 +68,5 @@ public class ButtonListener implements ActionListener {
 			Main.gameBoard.requestFocus();
 			break;
 		}
-
 	}
-
 }

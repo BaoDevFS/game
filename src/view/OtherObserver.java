@@ -21,8 +21,8 @@ public class OtherObserver extends JTextField implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		if (o instanceof UpdateParemeter) {
-			this.ufosDestroyed = ((UpdateParemeter) o).ufosDestroyed;
-			this.powerUpsCollected = ((UpdateParemeter) o).powerUpsCollected;
+			this.ufosDestroyed = ((UpdateParemeter) o).getUfosDestroyed();
+			this.powerUpsCollected = ((UpdateParemeter) o).getPowerUpsCollected();
 			display();
 		}
 

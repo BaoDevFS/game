@@ -12,7 +12,6 @@ import view.GameBoard;
 public class Bomb extends GameFigure {
 
     public static int bombsAlive;
-    public static int bombsDead;
     private int dy = 3;
     private int dx = 3;
     private int width = 20;
@@ -49,7 +48,6 @@ public class Bomb extends GameFigure {
 
     @Override
     public void render(Graphics2D g) {
-
         g.drawImage(bombImage, (int)super.x, (int)super.y, (int)(super.x + width), (int)(super.y + height),
                 spriteCoordinateTop.x, spriteCoordinateTop.y, spriteCoordinateBottom.x, spriteCoordinateBottom.y, null);
     }
@@ -85,7 +83,6 @@ public class Bomb extends GameFigure {
 
     @Override
     public void addDead() {
-        bombsDead++;
         bombsAlive--;
     }
 

@@ -48,7 +48,7 @@ public class PlayWindow extends JPanel {
 	}
 
 	public PlayWindow() {
-		updateParemeter = new UpdateParemeter();
+		updateParemeter = UpdateParemeter.getUniqueInstance();
 
 		setLayout(new BorderLayout());
 
@@ -63,7 +63,7 @@ public class PlayWindow extends JPanel {
 		pauseButton = new JButton();
 		pauseButton.setActionCommand("pause");
 		resumeButton = new JButton();
-		resumeButton.setActionCommand("remuse");
+		resumeButton.setActionCommand("resume");
 
 		startButton.setIcon(istart);
 		startButton.setBorder(null);

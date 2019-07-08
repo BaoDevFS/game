@@ -17,12 +17,12 @@ public class GameData {
 	private final int MAX_SAUCERS = 10;
 	private final int MAX_POWERUPS = 10;
 	private final int MAX_BOMBS = 12;
-	private CreateObject createObject;
+	private FactoryObject createObject;
 	public static Background bg;
 
 	public GameData() {
 		highScore = new HighScore();
-		createObject = new CreateObject();
+		createObject = new FactoryObject();
 		gameFigures = Collections.synchronizedList(new ArrayList<GameFigure>());
 		shooter = Shooter.getShooter();
 		gameFigures.add(shooter);
@@ -49,19 +49,19 @@ public class GameData {
 
 	public void addPower() {
 		synchronized (gameFigures) {
-			gameFigures.add(createObject.createObject(CreateObject.POWERUP));
+			gameFigures.add(createObject.createObject(FactoryObject.POWERUP));
 		}
 	}
 
 	public void addSaucer() {
 		synchronized (gameFigures) {
-			gameFigures.add(createObject.createObject(CreateObject.SAUCER));
+			gameFigures.add(createObject.createObject(FactoryObject.SAUCER));
 		}
 	}
 
 	public void addBomb() {
 		synchronized (gameFigures) {
-			gameFigures.add(createObject.createObject(CreateObject.BOOM));
+			gameFigures.add(createObject.createObject(FactoryObject.BOOM));
 		}
 	}
 

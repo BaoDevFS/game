@@ -20,7 +20,7 @@ public class ScoreObserver extends JTextField implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		if (o instanceof UpdateParemeter) {
-			this.score = ((UpdateParemeter) o).score;
+			this.score = ((UpdateParemeter) o).getScore();
 			display();
 		}
 
@@ -28,7 +28,7 @@ public class ScoreObserver extends JTextField implements Observer {
 
 	private void display() {
 		this.setText("Score " + this.score);
-
+		
 	}
 
 }

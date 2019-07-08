@@ -1,7 +1,7 @@
 
 package model;
 
-public class LaserWeapon extends WeaponPower{
+public class LaserWeapon extends WeaponDecor{
 
     public LaserWeapon(WeaponComponent weapon) {
         super(weapon);

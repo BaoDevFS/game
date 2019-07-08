@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import controller.Animator;
 import controller.Main;
+import view.UpdateParemeter;
 
 public class Shooter extends GameFigure {
 
@@ -101,11 +102,10 @@ public class Shooter extends GameFigure {
 			GameData.shooter = new Shooter(Main.WIN_WIDTH / 2, Main.WIN_HEIGHT / 2);
 		} else {
 			GameData.highScore.processHighScore();
-			JOptionPane jOptionPane = new JOptionPane();
-			jOptionPane.setMessage("Game Over");
-			JOptionPane.showMessageDialog(null, "Game Over");
+			int score =UpdateParemeter.getUniqueInstance().getScore();
 			Animator.running =false;
-		
+			JOptionPane.showMessageDialog(null, "Game Over \n Score: "+score);
+			System.exit(-1);
 		}
 	}
 }
